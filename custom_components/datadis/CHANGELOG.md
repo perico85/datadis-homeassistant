@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0] - 2024-01-01
+## [1.0.0] - 2026-03-25
 
 ### Added
 - First release of the Datadis integration
