@@ -1,0 +1,67 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "nif": "NIF/NIE",
+                    "password": "Contraseña"
+                },
+                "description": "Introduce tus credenciales de Datadis.",
+                "title": "Autenticación Datadis"
+            },
+            "select_cups": {
+                "data": {
+                    "cups": "CUPS"
+                },
+                "description": "Selecciona el punto de suministro que quieres monitorizar.",
+                "title": "Seleccionar Suministro"
+            },
+            "prices": {
+                "data": {
+                    "energy_price_p1": "Precio Energía Punta (P1) (€/kWh)",
+                    "energy_price_p2": "Precio Energía Llano (P2) (€/kWh)",
+                    "energy_price_p3": "Precio Energía Valle (P3) (€/kWh)",
+                    "power_price_p1": "Precio Potencia Punta (P1) (€/kW/día)",
+                    "power_price_p2": "Precio Potencia Valle (P2) (€/kW/día)",
+                    "contracted_power_p1": "Potencia Contratada Punta (kW)",
+                    "contracted_power_p2": "Potencia Contratada Valle (kW)",
+                    "electric_tax": "Impuesto Eléctrico (%)",
+                    "vat": "IVA (%)",
+                    "social_bonus": "Bono Social (€/día)",
+                    "equipment_rental": "Alquiler Contador (€/día)"
+                },
+                "description": "Configura los precios de tu tarifa eléctrica. Puedes encontrar estos valores en tu factura.",
+                "title": "Configuración de Tarifa"
+            }
+        },
+        "error": {
+            "auth_failed": "Error de autenticación. Verifica tus credenciales.",
+            "connection_error": "Error de conexión. Intenta de nuevo más tarde.",
+            "no_supplies": "No se encontraron puntos de suministro para esta cuenta."
+        },
+        "abort": {
+            "already_configured": "Este CUPS ya está configurado."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "energy_price_p1": "Precio Energía Punta (P1) (€/kWh)",
+                    "energy_price_p2": "Precio Energía Llano (P2) (€/kWh)",
+                    "energy_price_p3": "Precio Energía Valle (P3) (€/kWh)",
+                    "power_price_p1": "Precio Potencia Punta (P1) (€/kW/día)",
+                    "power_price_p2": "Precio Potencia Valle (P2) (€/kW/día)",
+                    "contracted_power_p1": "Potencia Contratada Punta (kW)",
+                    "contracted_power_p2": "Potencia Contratada Valle (kW)",
+                    "electric_tax": "Impuesto Eléctrico (%)",
+                    "vat": "IVA (%)",
+                    "social_bonus": "Bono Social (€/día)",
+                    "equipment_rental": "Alquiler Contador (€/día)"
+                },
+                "description": "Actualiza los precios de tu tarifa eléctrica.",
+                "title": "Opciones de Datadis"
+            }
+        }
+    }
+}

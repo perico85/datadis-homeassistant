@@ -1,0 +1,67 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "nif": "NIF/NIE",
+                    "password": "Password"
+                },
+                "description": "Enter your Datadis credentials.",
+                "title": "Datadis Authentication"
+            },
+            "select_cups": {
+                "data": {
+                    "cups": "CUPS"
+                },
+                "description": "Select the supply point you want to monitor.",
+                "title": "Select Supply"
+            },
+            "prices": {
+                "data": {
+                    "energy_price_p1": "Energy Price Punta (P1) (€/kWh)",
+                    "energy_price_p2": "Energy Price Llano (P2) (€/kWh)",
+                    "energy_price_p3": "Energy Price Valle (P3) (€/kWh)",
+                    "power_price_p1": "Power Price Punta (P1) (€/kW/day)",
+                    "power_price_p2": "Power Price Valle (P2) (€/kW/day)",
+                    "contracted_power_p1": "Contracted Power Punta (kW)",
+                    "contracted_power_p2": "Contracted Power Valle (kW)",
+                    "electric_tax": "Electric Tax (%)",
+                    "vat": "VAT (%)",
+                    "social_bonus": "Social Bonus (€/day)",
+                    "equipment_rental": "Equipment Rental (€/day)"
+                },
+                "description": "Configure your electricity tariff prices. You can find these values on your electricity bill.",
+                "title": "Tariff Configuration"
+            }
+        },
+        "error": {
+            "auth_failed": "Authentication failed. Check your credentials.",
+            "connection_error": "Connection error. Try again later.",
+            "no_supplies": "No supply points found for this account."
+        },
+        "abort": {
+            "already_configured": "This CUPS is already configured."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "energy_price_p1": "Energy Price Punta (P1) (€/kWh)",
+                    "energy_price_p2": "Energy Price Llano (P2) (€/kWh)",
+                    "energy_price_p3": "Energy Price Valle (P3) (€/kWh)",
+                    "power_price_p1": "Power Price Punta (P1) (€/kW/day)",
+                    "power_price_p2": "Power Price Valle (P2) (€/kW/day)",
+                    "contracted_power_p1": "Contracted Power Punta (kW)",
+                    "contracted_power_p2": "Contracted Power Valle (kW)",
+                    "electric_tax": "Electric Tax (%)",
+                    "vat": "VAT (%)",
+                    "social_bonus": "Social Bonus (€/day)",
+                    "equipment_rental": "Equipment Rental (€/day)"
+                },
+                "description": "Update your electricity tariff prices.",
+                "title": "Datadis Options"
+            }
+        }
+    }
+}
