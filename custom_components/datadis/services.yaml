@@ -1,0 +1,61 @@
+# Servicios disponibles para la integración Datadis
+
+update_data:
+  name: Actualizar datos
+  description: Fuerza la actualización inmediata de datos desde Datadis
+  fields:
+    cups:
+      name: CUPS
+      description: Código del suministro a actualizar (opcional, usa el configurado por defecto)
+      required: false
+      selector:
+        text:
+
+set_energy_prices:
+  name: Configurar precios de energía
+  description: Actualiza los precios de energía en tiempo real
+  fields:
+    p1_price:
+      name: Precio Punta (P1)
+      description: Precio del kWh en período punta (€/kWh)
+      required: true
+      default: 0.15
+      selector:
+        number:
+          min: 0
+          max: 2
+          step: 0.001
+          unit_of_measurement: "€/kWh"
+    p2_price:
+      name: Precio Llano (P2)
+      description: Precio del kWh en período llano (€/kWh)
+      required: true
+      default: 0.12
+      selector:
+        number:
+          min: 0
+          max: 2
+          step: 0.001
+          unit_of_measurement: "€/kWh"
+    p3_price:
+      name: Precio Valle (P3)
+      description: Precio del kWh en período valle (€/kWh)
+      required: true
+      default: 0.08
+      selector:
+        number:
+          min: 0
+          max: 2
+          step: 0.001
+          unit_of_measurement: "€/kWh"
+
+reset_accumulated:
+  name: Reiniciar acumulados
+  description: Reinicia los sensores acumulativos (útil para inicio de mes)
+  fields:
+    confirm:
+      name: Confirmar
+      description: Escribe "RESET" para confirmar
+      required: true
+      selector:
+        text:

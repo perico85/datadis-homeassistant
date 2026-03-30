@@ -58,6 +58,13 @@ Mediante esta integración podrás:
 - Seguimiento de importación/exportación a red
 - Estadísticas de consumo por períodos tarifarios
 
+### 🔘 Servicios y Botones
+- **Botón actualizar**: Forzar actualización desde la interfaz
+- **Botón reiniciar**: Reiniciar contadores acumulativos (útil para inicio de mes)
+- **Servicio `update_data`**: Actualización programable desde automatizaciones
+- **Servicio `set_energy_prices`**: Actualizar precios de energía dinámicamente
+- **Diagnósticos**: Descargar información de depuración desde Ajustes -> Dispositivos -> Datadis -> Descargar diagnósticos
+
 ---
 
 ## Requisitos
@@ -272,6 +279,69 @@ La integración clasifica automáticamente el consumo según la tarifa 2.0TD vig
 | **Valle (P3)** | 00:00-08:00 + fines de semana/festivos | ⬇️ Más barato |
 
 > **Nota:** Fin de semana y festivos nacionales son siempre período Valle (P3).
+
+---
+
+## Uso Avanzado
+
+### Servicios disponibles
+
+La integración expone los siguientes servicios para usar en automatizaciones:
+
+#### `datadis.update_data`
+Fuerza la actualización inmediata desde la API de Datadis.
+
+```yaml
+service: datadis.update_data
+data: {}
+```
+
+#### `datadis.set_energy_prices`
+Actualiza los precios de energía en tiempo real. Útil si cambias de comercializadora o tarifa.
+
+```yaml
+service: datadis.set_energy_prices
+data:
+  p1_price: 0.182  # Precio Punta (€/kWh)
+  p2_price: 0.145  # Precio Llano (€/kWh)
+  p3_price: 0.099  # Precio Valle (€/kWh)
+```
+
+#### `datadis.reset_accumulated`
+Reinicia los contadores acumulativos. Útil al inicio de mes.
+
+```yaml
+service: datadis.reset_accumulated
+data:
+  confirm: "RESET"  # Debe escribirse exactamente
+```
+
+### Ejemplo de automatización
+
+Actualizar precios automáticamente cada día a las 00:00:
+
+```yaml
+automation:
+  - alias: "Actualizar precios luz"
+    trigger:
+      - platform: time
+        at: "00:00:00"
+    action:
+      - service: datadis.set_energy_prices
+        data:
+          p1_price: "{{ states('sensor.precio_luz_punta') | float }}"
+          p2_price: "{{ states('sensor.precio_luz_llano') | float }}"
+          p3_price: "{{ states('sensor.precio_luz_valle') | float }}"
+```
+
+### Diagnósticos
+
+Si necesitas ayuda, puedes descargar información de diagnóstico:
+
+1. Ve a **Ajustes** -> **Dispositivos y servicios**
+2. Busca **Datadis** y haz clic
+3. Selecciona **Descargar diagnósticos**
+4. Adjunst este archivo al abrir un issue en GitHub
 
 ---
 

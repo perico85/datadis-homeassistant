@@ -68,4 +68,4 @@ TARIFF_PERIODS: Final = {
 }
 
 # Plataformas
-PLATFORMS: Final = ["sensor"]
+PLATFORMS: Final = ["sensor", "button"]
