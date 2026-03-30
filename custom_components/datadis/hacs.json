@@ -1,8 +1,7 @@
 {
     "name": "Datadis",
     "content_in_root": false,
-    "zip_release": true,
-    "filename": "datadis.zip",
+    "zip_release": false,
     "country": ["ES"],
     "domains": ["sensor"],
     "homeassistant": "2023.1.0",
